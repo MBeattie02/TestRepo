@@ -1,18 +1,16 @@
-public class SimpleWebApp {
-    public static void main(String[] args) {
-        String userInput = getParameter("userInput"); // Simulate getting a parameter from a web request
-        printToWebPage("Welcome, " + userInput); // This line is vulnerable to XSS
-    }
+import javax.servlet.http.*;
+import java.io.*;
 
-    // Simulated method to mimic getting user input from a web request
-    public static String getParameter(String paramName) {
-        // In a real scenario, this would return user-supplied input
-        return "userSuppliedContent";
-    }
+public class UnsafeServlet extends HttpServlet {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String userInput = request.getParameter("input");
 
-    // Simulated method to mimic sending output to a web page
-    public static void printToWebPage(String content) {
-        // In a real scenario, this would output directly to the web page
-        System.out.println(content);
+        PrintWriter out = response.getWriter();
+        // Unsafe output of user input directly into the response
+        // This would be detected by the XSSChecker as a potential XSS vulnerability
+        out.println("<html><body>");
+        out.println("<h1>Your input was: " + userInput + "</h1>");
+        out.println("</body></html>");
     }
 }
+
