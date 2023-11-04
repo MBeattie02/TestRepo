@@ -36,7 +36,7 @@ public class SimpleCalculator {
         scanner.close();
     }
 
-        public static double calculate(double number1, char operator, double number2) {
+public static double calculate(double number1, char operator, double number2) {
         switch (operator) {
             case '+':
                 return number1 + number2;
