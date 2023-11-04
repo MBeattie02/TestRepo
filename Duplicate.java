@@ -8,7 +8,7 @@ public class Duplicate {
         System.out.println("Sum: " + sum);
     }
 
-    public void method2() {
+    public void method1() {
         int sum = 0;
         for (int i = 0; i < 10; i++) {
             sum += i;
