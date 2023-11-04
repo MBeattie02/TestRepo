@@ -1,27 +1,42 @@
 public class IndentationTest {
 
-    public void correctlyIndentedMethod() {
-        int x = 0; // Correct: Indentation is 4 spaces inside method block
-        if (x == 0) {
-            x = 10; // Correct: Indentation is 8 spaces inside if block
+    public static void main(String[] args) {
+        // Correct indentation for a method block
+        int n = 10;
+        for (int i = 0; i < n; i++) {
+            // Correct indentation for a loop block
+            if (i % 2 == 0) {
+                // Correct indentation for an if block
+                System.out.println(i + " is even");
+            } else {
+                // Incorrect indentation, should be 4 spaces from the 'if' block
+              System.out.println(i + " is odd");
+            }
+        }
+
+        // Another method with incorrect indentation at the start
+      List<String> list = new ArrayList<>();
+        // Correct indentation for the method block
+        for (String item : list) {
+            // Correct indentation for a for-each loop
+            System.out.println(item);
+        }
+
+        // Nested loops with correct indentation
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (j < i) {
+                    // Incorrect indentation, should be 4 spaces from the 'if' block
+                  System.out.println("j < i");
+                }
+            }
         }
     }
 
-    public void incorrectlyIndentedMethod() {
-       int x = 1; // Incorrect: Indentation should be 4 spaces, but it's 3
-        if (x == 1) {
-          x = 11; // Incorrect: Indentation should be 8 spaces, but it's 6
-            if (x == 11) {
-             x = 21; // Incorrect: Indentation should be 12 spaces, but it's 5
-            }
-       } // Incorrect: Indentation should be 4 spaces, but it's 3
-    }
-
-    public void mixedIndentationMethod() {
-        int y = 2; // Correct: Indentation is 4 spaces inside method block
-        if (y == 2) {
-            y = 12; // Correct: Indentation is 8 spaces inside if block
-        } // Correct: Indentation is 4 spaces inside method block
-      int z = 3; // Incorrect: Indentation should be 4 spaces, but it's 2
+    // Incorrect indentation for a method declaration, should be at the class level
+  public void incorrectlyIndentedMethod() {
+        // Correct indentation for the method block
+        System.out.println("This method is incorrectly indented.");
     }
 }
+
