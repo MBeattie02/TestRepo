@@ -1,16 +1,21 @@
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
-public class UserContentController {
-
-    public void generateUserPage(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String userInput = request.getParameter("userContent");
-        
-        // This is a simplistic example of an unsafe operation that could lead to XSS.
-        // The method directly injects user input into HTML content without sanitization.
-        String htmlContent = "<div>" + userInput + "</div>";
-
+public class UserServlet extends HttpServlet {
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
-        response.getWriter().write(htmlContent);
+
+        // Retrieving user input from the request
+        String userInput = request.getParameter("userMessage");
+
+        // Direct concatenation of user input into HTML content
+        String responseContent = "<html><body><h1>Welcome!</h1><p>" + userInput + "</p></body></html>";
+
+        // Sending the response back to the client
+        response.getWriter().write(responseContent);
     }
 }
