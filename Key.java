@@ -1,4 +1,4 @@
-public class SecurityRisks {
+public class Key {
 
     // This looks like a hard-coded API key, which is often a high-entropy string
     private static final String API_KEY = "aPv4H35JmI0kvP77GG8Df4rt67Yk9w";
