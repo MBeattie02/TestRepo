@@ -22,15 +22,15 @@ public class SimpleCalculator {
             System.out.print("Enter second number: ");
             double number2 = scanner.nextDouble();
 
-            try {
-                double number1 = Double.parseDouble(input1);
-                double result = calculate(number1, operator, number2);
-                System.out.println("Result: " + result);
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid number entered. Please try again.");
-            } catch (ArithmeticException e) {
-                System.out.println("Error: " + e.getMessage());
-            }
+            // try {
+            //     double number1 = Double.parseDouble(input1);
+            //     double result = calculate(number1, operator, number2);
+            //     System.out.println("Result: " + result);
+            // } catch (NumberFormatException e) {
+            //     System.out.println("Invalid number entered. Please try again.");
+            // } catch (ArithmeticException e) {
+            //     System.out.println("Error: " + e.getMessage());
+            // }
         }
 
         scanner.close();
