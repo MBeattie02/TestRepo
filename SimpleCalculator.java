@@ -11,12 +11,12 @@ public class SimpleCalculator {
             System.out.print("Enter first number (or type 'exit' to quit): ");
             String input1 = scanner.next();
 
-            if (input1.equalsIgnoreCase("exit")) {
-                System.out.println("Goodbye!");
-                break;
-            }
+            // if (input1.equalsIgnoreCase("exit")) {
+            //     System.out.println("Goodbye!");
+            //     break;
+            // }
 
-            System.out.print("Enter operator (+, -, *, /): ");
+            //System.out.print("Enter operator (+, -, *, /): ");
             char operator = scanner.next().charAt(0);
 
             System.out.print("Enter second number: ");
@@ -50,7 +50,7 @@ public static double calculate(double number1, char operator, double number2) {
                 }
                 return number1 / number2;
             default:
-                throw new IllegalArgumentException("Invalid operator. Supported operators are +, -, *, /.");
+                throw new IllegalArgumentException("Invalid operator.");
         }
     }
 }
